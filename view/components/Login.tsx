@@ -1,5 +1,5 @@
 import { StyleSheet, Text, TextInput, TouchableOpacity, View} from "react-native";
-import {auth, signInWithEmailAndPassword, createUserWithEmailAndPassword} from "../../data/api/firebase";
+import {auth, loginWithEmailAndPassword, createUserWithEmailAndPassword} from "../../data/api/firebase";
 import {useEffect, useState} from "react";
 import {useNavigation} from "@react-navigation/core";
 
@@ -10,7 +10,7 @@ export default function Login(): JSX.Element {
     const navigation = useNavigation<any>()
 
     const handeLogin= () => {
-        signInWithEmailAndPassword(auth, email, password)
+        loginWithEmailAndPassword(auth, email, password)
             .then(userCrenetials => {
                 const user = userCrenetials.user
                 console.log('Logged in with: ' + user?.email)

@@ -1,16 +1,18 @@
-import { StyleSheet, Text, TextInput, TouchableOpacity, View} from "react-native";
+import { SafeAreaView, StyleSheet, Text, TextInput, TouchableOpacity, View} from "react-native";
 import {auth, logout} from "../../data/api/firebase";
+import CharityAccessList from "./CharityAccessList";
 
 const handleLogout= () => {
     logout();
 }
 
 export default function Main(): JSX.Element {
-    return <View>
+    return <SafeAreaView>
         <TouchableOpacity style={styles.buttonLoginContainer} onPress={() => handleLogout()}>
             <Text style={{fontWeight: "bold", color: 'white', fontSize: 18}}>Log Out</Text>
         </TouchableOpacity>
-    </View>
+        <CharityAccessList />
+    </SafeAreaView>
 }
 
 const styles = StyleSheet.create({
