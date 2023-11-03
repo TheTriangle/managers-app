@@ -1,6 +1,6 @@
 import { SafeAreaView, StyleSheet, Text, TextInput, TouchableOpacity, View} from "react-native";
 import {auth, logout} from "../../data/api/firebase";
-import CharityAccessList from "./CharityAccessList";
+import CharityAccessList from "../screens/CharityAccessList";
 
 const handleLogout= () => {
     logout();
